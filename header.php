@@ -36,6 +36,8 @@
   <meta property="twitter:title" content="Redesign Neon — Landing Page Codeboost" />
   <meta property="twitter:description" content="A conta digital certa pra cuidar bem do seu dinheiro" />
   <meta property="twitter:image" content="https://nathaliaveneziano.github.io/codeboost_projeto-neon/share-img.png" />
+
+  <?php wp_head(); ?>
 </head>
 
 <body>
