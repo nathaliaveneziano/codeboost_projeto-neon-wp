@@ -1,0 +1,33 @@
+.card-testimonial {
+  width: 100%;
+  max-width: 38.4rem;
+  height: 21rem;
+  background-color: rgba(241, 240, 245, 0.55);
+  border-radius: 0.8rem;
+  padding: 3.6rem 3.2rem 2.4rem;
+
+  .user {
+    @include flex(row, center, space-between);
+    margin-bottom: 2rem;
+
+    strong {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1.8rem;
+      line-height: 112%;
+      letter-spacing: -1px;
+      color: $grey-500;
+    }
+  }
+
+  p {
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 150%;
+    color: $grey-400;
+  }
+
+  @include responsive(480px) {
+    height: 25.4rem;
+  }
+}
