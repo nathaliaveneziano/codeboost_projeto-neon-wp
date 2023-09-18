@@ -19,7 +19,9 @@
   <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/css/main.min.css" />
 
   <!-- Primary Meta Tags -->
-  <title>Redesign Neon — Landing Page Codeboost</title>
+  <title><?php
+          wp_title('|', true, 'right');
+          bloginfo('name'); ?></title>
   <meta name="title" content="Redesign Neon — Landing Page Codeboost" />
   <meta name="description" content="A conta digital certa pra cuidar bem do seu dinheiro" />
 
