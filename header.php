@@ -47,13 +47,27 @@
     <div class="container">
       <a href="" class="logo"><img src="<?= get_template_directory_uri(); ?>/img/logo.svg" alt="Logo Neon" /></a>
       <nav>
-        <ul>
-          <li><a href="">Produtos</a></li>
-          <li><a href="">Conta digital PJ</a></li>
-          <li><a href="<?= get_permalink(get_page_by_path('Sobre')); ?>">Quem somos</a></li>
-          <li><a href="<?= get_permalink(get_page_by_path('Blog')); ?>">Blog</a></li>
-          <li><a href="<?= get_permalink(get_page_by_path('Contato')); ?>">Ajuda</a></li>
-        </ul>
+        <?php
+        if (is_page('Home')) {
+        ?>
+          <ul>
+            <li><a href="">Produtos</a></li>
+            <li><a href="">Conta digital PJ</a></li>
+            <li><a href="<?= get_permalink(get_page_by_path('Sobre')); ?>">Quem somos</a></li>
+            <li><a href="<?= get_permalink(get_page_by_path('Blog')); ?>">Blog</a></li>
+            <li><a href="<?= get_permalink(get_page_by_path('Contato')); ?>">Ajuda</a></li>
+          </ul>
+        <?php
+        } else {
+        ?>
+          <ul>
+            <li><a href="<?= get_permalink(get_page_by_path('Sobre')); ?>">Quem somos</a></li>
+            <li><a href="<?= get_permalink(get_page_by_path('Blog')); ?>">Blog</a></li>
+            <li><a href="<?= get_permalink(get_page_by_path('Contato')); ?>">Ajuda</a></li>
+          </ul>
+        <?php
+        }
+        ?>
         <button class="btn-secondary white">Abra sua conta digital</button>
         <button class="btn-mobile">
           <img src="<?= get_template_directory_uri(); ?>/img/btn-mobile.svg" alt="" />
