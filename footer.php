@@ -27,13 +27,14 @@
         <nav>
           <div class="item">
             <strong>Produtos Neon</strong>
-            <ul>
-              <li><a href="">Cartão de crédito</a></li>
-              <li><a href="">Cartão pré-pago</a></li>
-              <li><a href="">Neon Mais</a></li>
-              <li><a href="">Investimentos</a></li>
-              <li><a href="">Empréstimo</a></li>
-            </ul>
+            <?php
+            $args = array(
+              'menu' => 'Menu de Produtos do Rodapé',
+              'theme_location' => 'products-footer-menu',
+              'container' => false
+            );
+            wp_nav_menu($args);
+            ?>
           </div>
           <div class="item">
             <strong>Conta digital PJ</strong>
@@ -134,6 +135,6 @@
   </script>
 
   <? wp_footer(); ?>
-</body>
+  </body>
 
-</html>
+  </html>
