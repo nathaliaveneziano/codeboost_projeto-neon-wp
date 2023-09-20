@@ -1,10 +1,10 @@
 <?php
-// Template Name: Blog
+// Template Name: Contato
 
 get_header();
 ?>
 
-<h1>Página Blog</h1>
+<h1>Página Contato</h1>
 
 <?php
 get_footer();
