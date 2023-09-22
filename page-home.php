@@ -114,7 +114,6 @@ if (have_posts()) : while (have_posts()) : the_post();
         <div class="slide-testimonials" data-aos="fade-up">
           <div class="swiper-wrapper">
             <?php if (have_rows('items_testimonials')) : while (have_rows('items_testimonials')) : the_row(); ?>
-
                 <div class="swiper-slide">
                   <div class="card-testimonial">
                     <div class="user">
@@ -124,7 +123,6 @@ if (have_posts()) : while (have_posts()) : the_post();
                     <p><?php the_sub_field('text_testimonial'); ?></p>
                   </div>
                 </div>
-
             <?php endwhile;
             endif; ?>
           </div>
@@ -136,39 +134,23 @@ if (have_posts()) : while (have_posts()) : the_post();
       <div class="container">
         <div class="text" data-aos="fade-right">
           <h2>
-            <span>Aproveite</span>Domine o seu dinheiro com uma conta 100%
-            digital
+            <span><?php the_field('subtitle_digital_account'); ?></span><?php the_field('title_digital_account'); ?>
           </h2>
           <ul>
-            <li>
-              <div class="icon">
-                <img src="<?= get_template_directory_uri(); ?>/img/icon-cartao-internacional.svg" />
-              </div>
-              <div class="info">
-                <h4>Cartão visa internacional</h4>
-                <p>Tenha facilidades e benefícios para o seu dia a dia.</p>
-              </div>
-            </li>
-            <li>
-              <div class="icon">
-                <img src="<?= get_template_directory_uri(); ?>/img/icon-taxa-zero.svg" />
-              </div>
-              <div class="info">
-                <h4>Zero mensalidade e anuidade</h4>
-                <p>Não gaste grana pagando taxas desnecessárias.</p>
-              </div>
-            </li>
-            <li>
-              <div class="icon">
-                <img src="<?= get_template_directory_uri(); ?>/img/icon-poupanca.svg" />
-              </div>
-              <div class="info">
-                <h4>Investimento que rende mais que a poupança</h4>
-                <p>Invista o seu dinheiro de maneira mais rentável.</p>
-              </div>
-            </li>
+            <?php if (have_rows('items_digital_account')) : while (have_rows('items_digital_account')) : the_row(); ?>
+                <li>
+                  <div class="icon">
+                    <img src="<?php the_sub_field('icon_item'); ?>" />
+                  </div>
+                  <div class="info">
+                    <h4><?php the_sub_field('title_item'); ?></h4>
+                    <p><?php the_sub_field('text_item'); ?></p>
+                  </div>
+                </li>
+            <?php endwhile;
+            endif; ?>
           </ul>
-          <button class="btn-primary">Abra sua conta digital</button>
+          <button class="btn-primary"><?php the_field('button_digital_account'); ?></button>
         </div>
         <div class="image">
           <img src="<?= get_template_directory_uri(); ?>/img/mockup-01.svg" class="mockup-01" data-aos="fade-up" />
