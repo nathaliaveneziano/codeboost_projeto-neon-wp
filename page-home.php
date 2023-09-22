@@ -9,36 +9,24 @@ if (have_posts()) : while (have_posts()) : the_post();
     <section class="s-hero">
       <div class="container">
         <div class="text" data-aos="fade-right">
-          <h3>Abra sua conta, é só baixar o app!</h3>
-          <h1>A conta digital certa pra cuidar bem do seu dinheiro</h1>
-          <button class="btn-primary">Abra sua conta digital</button>
+          <h3><?php the_field('subtitle_section_hero'); ?></h3>
+          <h1><?php the_field('title_section_hero'); ?></h1>
+          <button class="btn-primary"><?php the_field('text_button'); ?></button>
           <ul>
-            <li>
-              <div class="icon">
-                <img src="<?= get_template_directory_uri(); ?>/img/icon-anuidade.svg" alt="Ícone de cartão sem anuidade" />
-              </div>
-              <span>Cartão sem <br />
-                anuidade</span>
-            </li>
-            <li>
-              <div class="icon">
-                <img src="<?= get_template_directory_uri(); ?>/img/icon-conta-digital.svg" alt="Ícone de conta digital" />
-              </div>
-              <span>Conta digital <br />
-                100% grátis</span>
-            </li>
-            <li>
-              <div class="icon">
-                <img src="<?= get_template_directory_uri(); ?>/img/icon-dinheiro.svg" alt="Ícone de " />
-              </div>
-              <span>Seu dinheiro <br />
-                rendendo mais</span>
-            </li>
+            <?php if (have_rows('items_section_hero')) : while (have_rows('items_section_hero')) : the_row(); ?>
+                <li>
+                  <div class="icon">
+                    <img src="<?php the_sub_field('icon_item'); ?>" alt="<?php the_sub_field('text_item'); ?>" />
+                  </div>
+                  <span><?php the_sub_field('text_item'); ?></span>
+                </li>
+            <?php endwhile;
+            endif; ?>
           </ul>
         </div>
 
         <div class="area-image">
-          <h2 data-aos="fade-left">Banco 100% digital</h2>
+          <h2 data-aos="fade-left"><?php the_field('subtitle_right_section_hero'); ?></h2>
           <div class="image" data-aos="zoom-in">
             <img src="<?= get_template_directory_uri(); ?>/img/card-neon-frnt.png" class="card-front" />
             <img src="<?= get_template_directory_uri(); ?>/img/card-neon-back.png" class="card-back" />
