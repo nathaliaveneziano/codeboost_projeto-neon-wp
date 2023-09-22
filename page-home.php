@@ -106,86 +106,27 @@ if (have_posts()) : while (have_posts()) : the_post();
       <div class="container">
         <div class="top" data-aos="fade-right">
           <h2>
-            <span>Prático, fácil, moderno</span>Você resolve tudo sem estresse
-            😊
+            <span><?php the_field('title_testimonial'); ?></span><?php the_field('subtitle_testimonials'); ?>
           </h2>
           <div class="swiper-pagination"></div>
         </div>
         <!-- Swiper -->
         <div class="slide-testimonials" data-aos="fade-up">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="card-testimonial">
-                <div class="user">
-                  <strong>@marciogurka</strong>
-                  <img src="<?= get_template_directory_uri(); ?>/img/icon-twiiter.svg" />
+            <?php if (have_rows('items_testimonials')) : while (have_rows('items_testimonials')) : the_row(); ?>
+
+                <div class="swiper-slide">
+                  <div class="card-testimonial">
+                    <div class="user">
+                      <strong><?php the_sub_field('user_testimonial'); ?></strong>
+                      <img src="<?= get_template_directory_uri(); ?>/img/icon-twiiter.svg" />
+                    </div>
+                    <p><?php the_sub_field('text_testimonial'); ?></p>
+                  </div>
                 </div>
-                <p>
-                  Valeu @banconenon! Linda embalagem e o cartão tbm é lindo!
-                  Muito amor por esse banco #bancoNeon
-                </p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="card-testimonial">
-                <div class="user">
-                  <strong>@kleriene18</strong>
-                  <img src="<?= get_template_directory_uri(); ?>/img/icon-twiiter.svg" />
-                </div>
-                <p>
-                  Eu uso o Neon pra render o pouquinho que eu tenho. Como disse
-                  minha amiga Bruna, um dia eu abro o app de novo e PA: tô rica.
-                </p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="card-testimonial">
-                <div class="user">
-                  <strong>@mzltweet</strong>
-                  <img src="<?= get_template_directory_uri(); ?>/img/icon-twiiter.svg" />
-                </div>
-                <p>
-                  Só por ter um cartão virtual com bloqueio fácil no app, já
-                  ganha e muito na segurançã pro cliente.
-                </p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="card-testimonial">
-                <div class="user">
-                  <strong>@marciogurka</strong>
-                  <img src="<?= get_template_directory_uri(); ?>/img/icon-twiiter.svg" />
-                </div>
-                <p>
-                  Valeu @banconenon! Linda embalagem e o cartão tbm é lindo!
-                  Muito amor por esse banco #bancoNeon
-                </p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="card-testimonial">
-                <div class="user">
-                  <strong>@kleriene18</strong>
-                  <img src="<?= get_template_directory_uri(); ?>/img/icon-twiiter.svg" />
-                </div>
-                <p>
-                  Eu uso o Neon pra render o pouquinho que eu tenho. Como disse
-                  minha amiga Bruna, um dia eu abro o app de novo e PA: tô rica.
-                </p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="card-testimonial">
-                <div class="user">
-                  <strong>@mzltweet</strong>
-                  <img src="<?= get_template_directory_uri(); ?>/img/icon-twiiter.svg" />
-                </div>
-                <p>
-                  Só por ter um cartão virtual com bloqueio fácil no app, já
-                  ganha e muito na segurançã pro cliente.
-                </p>
-              </div>
-            </div>
+
+            <?php endwhile;
+            endif; ?>
           </div>
         </div>
       </div>
