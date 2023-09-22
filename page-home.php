@@ -16,7 +16,7 @@ if (have_posts()) : while (have_posts()) : the_post();
             <?php if (have_rows('items_section_hero')) : while (have_rows('items_section_hero')) : the_row(); ?>
                 <li>
                   <div class="icon">
-                    <img src="<?php the_sub_field('icon_item'); ?>" alt="<?php the_sub_field('text_item'); ?>" />
+                    <img src="<?php the_sub_field('icon_item'); ?>" alt="" />
                   </div>
                   <span><?php the_sub_field('text_item'); ?></span>
                 </li>
@@ -161,6 +161,8 @@ if (have_posts()) : while (have_posts()) : the_post();
     </section>
 
 <?php
+    include(TEMPLATEPATH . '/includes/section-uso.php');
+
   endwhile;
 endif;
 
