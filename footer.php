@@ -3,23 +3,14 @@
       <div class="top">
         <img src="<?= get_template_directory_uri(); ?>/img/logo.svg" alt="" />
         <div class="share">
-          <span>Acompanhe nas redes</span>
+          <span><?php the_field('title_social_media', 'options'); ?></span>
           <ul>
-            <li>
-              <a href=""><img src="<?= get_template_directory_uri(); ?>/img/youtube.svg" alt="" /></a>
-            </li>
-            <li>
-              <a href=""><img src="<?= get_template_directory_uri(); ?>/img/linkedin.svg" alt="" /></a>
-            </li>
-            <li>
-              <a href=""><img src="<?= get_template_directory_uri(); ?>/img/facebook.svg" alt="" /></a>
-            </li>
-            <li>
-              <a href=""><img src="<?= get_template_directory_uri(); ?>/img/instagram.svg" alt="" /></a>
-            </li>
-            <li>
-              <a href=""><img src="<?= get_template_directory_uri(); ?>/img/twitter-white.svg" alt="" /></a>
-            </li>
+            <?php if (have_rows('items_social_media', 'options')) : while (have_rows('items_social_media', 'options')) : the_row(); ?>
+                <li>
+                  <a href="<?php the_sub_field('url', 'options'); ?>"><img src="<?php the_sub_field('icon', 'options'); ?>" alt="" /></a>
+                </li>
+            <?php endwhile;
+            endif; ?>
           </ul>
         </div>
       </div>
@@ -70,29 +61,21 @@
           </div>
         </nav>
         <div class="btns">
-          <button>
-            <img src="<?= get_template_directory_uri(); ?>/img/envelope.svg" alt="" />
-            <div class="info">
-              <strong>Atendimento:</strong>
-              <span>oi@neon.com.br (24 horas)</span>
-            </div>
-          </button>
-          <button>
-            <img src="<?= get_template_directory_uri(); ?>/img/chat.svg" alt="" />
-            <div class="info">
-              <strong>Imprensa:</strong>
-              <span>imprensa@neon.com.br</span>
-            </div>
-          </button>
+          <?php if (have_rows('items_contact', 'options')) : while (have_rows('items_contact', 'options')) : the_row(); ?>
+              <button>
+                <img src="<?php the_sub_field('icon', 'options'); ?>" alt="" />
+                <div class="info">
+                  <strong><?php the_sub_field('title', 'options'); ?></strong>
+                  <span><?php the_sub_field('text', 'options'); ?></span>
+                </div>
+              </button>
+          <?php endwhile;
+          endif; ?>
         </div>
       </div>
       <div class="msg">
         <div class="icon">😀</div>
-        <p>
-          Oi! Leu até aqui? Você se preocupa com os mínimos detalhes, mesmo. A
-          gente também. Por isso o time Neon está sempre trabalhando para
-          fazer a conta digital perfeita para você ;)
-        </p>
+        <?php the_field('text_message', 'options'); ?>
       </div>
     </div>
   </footer>
