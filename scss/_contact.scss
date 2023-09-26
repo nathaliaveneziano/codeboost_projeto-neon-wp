@@ -1,0 +1,104 @@
+.s-contact {
+  .menu-background {
+    height: 56px;
+    background: linear-gradient(99deg, #00a5f0 7.94%, #00d7d7 95.32%);
+  }
+
+  .container {
+    padding: 100px 0;
+
+    h1 {
+      margin-bottom: 24px;
+    }
+
+    form {
+      width: 100%;
+      max-width: 50rem;
+
+      .wpcf7-response-output {
+        font-size: 14px;
+        padding: 15px;
+        border-radius: 5px;
+      }
+
+      .wpcf7-not-valid-tip {
+        margin-top: 10px;
+        font-weight: 600;
+        font-size: 12px;
+      }
+
+      &.sent {
+        .wpcf7-response-output {
+          background-color: #99f899;
+          color: green;
+        }
+      }
+
+      &.invalid {
+        .wpcf7-response-output {
+          background-color: #fff4d8;
+          color: #ffb900;
+        }
+      }
+
+      &.failed {
+        .wpcf7-response-output {
+          background-color: #f9d3d3;
+          color: #dc3232;
+        }
+      }
+
+      p {
+        label {
+          font-size: 1.8rem;
+          font-weight: 500;
+          color: rgba(128, 128, 128, 0.8);
+          display: block;
+          margin-bottom: 15px;
+        }
+
+        input[type='text'],
+        input[type='email'] {
+          width: 100%;
+          height: 48px;
+          border: 1px solid rgba(128, 128, 128, 0.2);
+          border-radius: 5px;
+          padding: 15px;
+          font-size: 16px;
+          margin-top: 5px;
+
+          &.wpcf7-not-valid {
+            border: 1px solid red;
+          }
+        }
+
+        textarea {
+          width: 100%;
+          height: 150px;
+          border: 1px solid rgba(128, 128, 128, 0.2);
+          border-radius: 5px;
+          padding: 15px;
+          font-size: 16px;
+          margin-top: 5px;
+        }
+
+        input[type='submit'] {
+          width: 150px;
+          height: 48px;
+          background-color: $brand-light-blue;
+          border-radius: 5px;
+          font-size: 18px;
+          text-transform: uppercase;
+          font-weight: 600;
+          color: #fff;
+          cursor: pointer;
+          margin-bottom: 15px;
+        }
+      }
+
+      .wpcf7-response-output {
+        font-size: 14px;
+      }
+    }
+  }
+}
